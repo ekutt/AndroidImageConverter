@@ -4,9 +4,9 @@ Android JPEG to TIFF converter native application project.
 
 The aim of this project is to show an example Android application which uses native C/C++ libraries.
 
-##Building The Project
+## Building The Project
 
-###Requirements
+### Requirements
 - Android NDK r21d
 - Android SDK
 - Android SDK Build tools 30.0.0
