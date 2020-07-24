@@ -11,17 +11,13 @@ android {
         versionCode 1
         versionName "1.0"
 
-        ndk {
-            abiFilters 'arm64-v8a'
-        }
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
                 arguments "-DTIFF_DIR="+getTIFFDir(),
                           "-DJPEG_DIR="+getJPEGDir()
 
-                cppFlags "-std=c++11 -fvisibility=hidden -g"
+                cppFlags "-std=c++11 -fvisibility=hidden"
             }
         }
     }
@@ -32,6 +28,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
