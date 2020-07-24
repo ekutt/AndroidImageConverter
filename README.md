@@ -1,8 +1,8 @@
-JPEG to TIFF Image Converter Application for Android
+Image Converter Application for Android
 ==============================================
 Android JPEG to TIFF converter native application project.
 
-The aim of this project is to show an application which uses native C/C++ libraries.
+The aim of this project is to show an example Android application which uses native C/C++ libraries.
 
 Building The Project
 ---------------------------------
@@ -16,9 +16,11 @@ Requirements
 Edit 'buildToolsVersion' in 'build.gradle' files if necessary.
 
 Clone this project and create local.properties file under project root directory.
-Add the following information in local.properties file:
+Add the following properties to local.properties file with directory information 
+where you installed Android sdk and ndk:
 
 	sdk.dir=<SDK_INSTALL_DIR>
 	ndk.dir=<NDK_INSTALL_DIR>
+
 
 
