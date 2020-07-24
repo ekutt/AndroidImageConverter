@@ -1,0 +1,49 @@
+version: 2.1
+
+orbs:
+  android: circleci/android@0.2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/android:api-28
+
+    steps:
+      - checkout
+
+      - android/install-ndk
+
+      - run:
+          command: ./gradlew build
+          #connectedAndroidTest
+#################################################
+      - run:
+          name: Show list of system-images
+          command: sdkmanager --list --verbose | grep system-images
+
+      - run:
+          name: Accept licenses
+          command: yes | sdkmanager --licenses || true
+
+      - run:
+          name: Setup emulator
+          command: sdkmanager "system-images;android-28;google_apis_playstore;x86-64" && echo "no" | avdmanager create avd -n test -k "system-images;android-28;google_apis_playstore;x86-64"
+
+      - run:
+          name: Launch emulator
+          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator -avd test -noaudio -no-boot-anim -no-window -accel on
+          background: true
+
+      - run:
+          name: Wait emulator
+          command: |
+            # wait for it to have booted
+            circle-android wait-for-boot
+            # unlock the emulator screen
+            sleep 30
+            adb shell input keyevent 82
+
+      - run:
+          name: Run Tests
+          command: ./gradlew connectedAndroidTest
+

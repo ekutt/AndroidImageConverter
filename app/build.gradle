@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "com.ekutt.example.imageconverter"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            abiFilters 'arm64-v8a'
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                arguments "-DTIFF_DIR="+getTIFFDir(),
+                          "-DJPEG_DIR="+getJPEGDir()
+
+                cppFlags "-std=c++11 -fvisibility=hidden -g"
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
+    }
+
+}
+
+def getJPEGDir() {
+    Properties properties = new Properties()
+    properties.load(new File(rootDir.absolutePath + "/local.properties").newDataInputStream())
+    def externalModuleDir = properties.getProperty('jpeg.dir', null)
+    if (externalModuleDir == null) {
+        throw new GradleException(
+                "JPEG location not found. Define location with jpeg.dir in the local.properties file!")
+    }
+    return externalModuleDir
+}
+
+def getTIFFDir() {
+    Properties properties = new Properties()
+    properties.load(new File(rootDir.absolutePath + "/local.properties").newDataInputStream())
+    def externalModuleDir = properties.getProperty('tiff.dir', null)
+    if (externalModuleDir == null) {
+        throw new GradleException(
+                "TIFF location not found. Define location with tiff.dir in the local.properties file!")
+    }
+    return externalModuleDir
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
