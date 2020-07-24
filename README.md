@@ -26,14 +26,9 @@ where you installed Android sdk and ndk:
 #### Building & Deploying The Dependencies
 You must build libjpeg and libtiff dependencies before you can build the project. 
 
-Extract libtiff v4.1.0 source, copy the following build.sh file into libtiff source root directory:
-
-{% gist 54ccc40180d3fd835bb39d04834e3994 build.sh %}
-
+Extract libtiff v4.1.0 source, copy the build-lib.sh file from project root directory to libtiff source root directory.
 Open terminal in libtiff source root directory and execute the script. Library will be installed to "install"
-directory under libtiff source root directory.
-
-Follow the same steps for libjpeg also.
+directory under libtiff source root directory. Follow the same steps for libjpeg also.
 
 Copy the libtiff.so, libjpeg.so from install directories and libz.so from ndk to corresponding directories(x86, x86_64, armeabi-v7a, arm64-v8a)
 in project depending on target device architecture. 
