@@ -28,7 +28,7 @@ You must build libjpeg and libtiff dependencies before you can build the project
 
 Extract libtiff v4.1.0 source, copy the following build.sh file into libtiff source root directory:
 
-<script src="https://gist.github.com/ekutt/54ccc40180d3fd835bb39d04834e3994.js"></script>
+{% gist 54ccc40180d3fd835bb39d04834e3994 %}
 
 Open terminal in libtiff source root directory and execute the script. Library will be installed to "install"
 directory under libtiff source root directory.
