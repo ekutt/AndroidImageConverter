@@ -14,9 +14,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
-                arguments "-DTIFF_DIR="+getTIFFDir(),
-                          "-DJPEG_DIR="+getJPEGDir()
-
                 cppFlags "-std=c++11 -fvisibility=hidden"
             }
         }
@@ -36,28 +33,6 @@ android {
         }
     }
 
-}
-
-def getJPEGDir() {
-    Properties properties = new Properties()
-    properties.load(new File(rootDir.absolutePath + "/local.properties").newDataInputStream())
-    def externalModuleDir = properties.getProperty('jpeg.dir', null)
-    if (externalModuleDir == null) {
-        throw new GradleException(
-                "JPEG location not found. Define location with jpeg.dir in the local.properties file!")
-    }
-    return externalModuleDir
-}
-
-def getTIFFDir() {
-    Properties properties = new Properties()
-    properties.load(new File(rootDir.absolutePath + "/local.properties").newDataInputStream())
-    def externalModuleDir = properties.getProperty('tiff.dir', null)
-    if (externalModuleDir == null) {
-        throw new GradleException(
-                "TIFF location not found. Define location with tiff.dir in the local.properties file!")
-    }
-    return externalModuleDir
 }
 
 dependencies {
