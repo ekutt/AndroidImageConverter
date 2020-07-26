@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10.2)
 
 include_directories("${CMAKE_SOURCE_DIR}/image/include")
-include_directories("${TIFF_DIR}/include")
-include_directories("${JPEG_DIR}/include")
+include_directories("${CMAKE_SOURCE_DIR}/../../../../3rd-party/jpeg-9d/include")
+include_directories("${CMAKE_SOURCE_DIR}/../../../../3rd-party/tiff-4.1.0/include")
 
 add_library(imageOps
              SHARED
