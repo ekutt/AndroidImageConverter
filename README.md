@@ -43,7 +43,7 @@ If you wonder how to build and deploy them in case you wanted to create a projec
 **Note:** Autoconf projects are generally not buildable on Windows. Windows users can build the libraries using WSL or MSYS.
 
 ##### Cross Building LibTIFF with Clang for Android
-Extract the libtiff source to the directory of your choice and copy the following script (build-lib.sh) to the libtiff source root 
+Extract the libtiff source to the directory of your choice and copy and run the following script (build-lib.sh) to the libtiff source root 
 directory.
 
 	#!/bin/bash
@@ -88,9 +88,10 @@ directory.
 build-lib.sh script does the necessary job of setting up environment variables so that the build scripts call the correct cross compilation tools in NDK. What you have to do in the build-lib.sh script is to change <NDK-INSTALL-DIR> to the directory where you have installed Android NDK to (e.g. /home/testUser/android-ndk-r21d). Uncomment the corresponding TARGET line depending on your target platform and execute the script at the root directory of libtiff source. Libtiff has zlib dependency but there is no need to cross build zlib since prebuilt zlib library is already shipped with ndk-r21d.
 Running build-lib.sh script should successfully build the libtiff and install the headers and compiled binaries to “install” folder under libtiff source root directory.
 	
-#####Cross Building LibJPEG with Clang for Android
+##### Cross Building LibJPEG with Clang for Android
 Extract the libjpeg source to the directory of your choice and copy the same build-lib.sh script we used in previous section to the libjpeg source root directory. Follow the script modification steps as mentioned in previous section and execute the script from the root directory of libjpeg source. Running build-lib.sh script should successfully build the libjpeg and install the headers and compiled binaries to “install” folder under libjpeg source root directory.
-Deploying The Libraries in Android Studio Project
+
+##### Deploying The Libraries in Android Studio Project
 We need to deploy libjpeg and libtiff shared libraries into Android Studio Project. We want Gradle to package our prebuilt native libraries that are not used in any external native build. Since we are using Gradle plugin 4.0, we need to keep prebuilt libraries in a directory other than jniLibs. (Important: Please don’t forget to copy libz.so from ndk package. Libtiff has libz dependency.) So, we add them to the src/main/libs/ABI directory of our module. Deployment should look like follows:
 
 ![alt text](https://github.com/ekutt/AndroidImageConverter/blob/assets/assets/dependencies.png)
