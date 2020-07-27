@@ -9,8 +9,6 @@ The aim of this project is to provide an example Android application code that u
 - Android NDK r21d
 - Android SDK
 - Android SDK Build tools 30.0.0
-- libjpeg v9d
-- libtiff v4.1.0
 - CMake 3.10.2
 
 Edit 'buildToolsVersion' in 'build.gradle' files if necessary.
@@ -40,12 +38,3 @@ The project is in Gradle project format. There are numerous ways you can build t
 - Alternatively, you can open the terminal under project root directory and run the following command:
 
 	./gradlew build 
-
-
-
-
-
-
-
-
-
