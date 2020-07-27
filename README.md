@@ -41,7 +41,8 @@ If you wonder how to build and deploy them in case you wanted to create a projec
 
 #### Building The Dependencies
 **Note:** Autoconf projects are generally not buildable on Windows. Windows users can build the libraries using WSL or MSYS.
-#####Cross Building LibTIFF with Clang for Android
+
+##### Cross Building LibTIFF with Clang for Android
 Extract the libtiff source to the directory of your choice and copy the following script (build-lib.sh) to the libtiff source root 
 directory.
 
