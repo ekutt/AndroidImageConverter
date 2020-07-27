@@ -18,7 +18,7 @@ jobs:
         java-version: 1.8       
     # Step to Install the NDK
     - name: Install NDK
-      run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;21.3.6528147"
+      run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;21.0.6113669"
     # Step to Build the Project and generate the APK
     - name: build debug apk
       run: ./gradlew build
