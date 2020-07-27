@@ -45,6 +45,7 @@ If you wonder how to build and deploy them in case you wanted to create a projec
 Extract the libtiff source to the directory of your choice and copy the following script (build-lib.sh) to the libtiff source root 
 directory.
 
+	#!/bin/bash
 	export NDK=<NDK-INSTALL-DIR>
 	# Only choose one of these, depending on your development platform
 	# export HOST_TAG=linux-x86_64
