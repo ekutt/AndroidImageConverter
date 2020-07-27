@@ -91,6 +91,8 @@ Extract the libjpeg source to the directory of your choice and copy the same bui
 
 ##### Deploying The Libraries in Android Studio Project
 We need to deploy libjpeg and libtiff shared libraries into Android Studio Project. We want Gradle to package our prebuilt native libraries that are not used in any external native build. Since we are using Gradle plugin 4.0, we need to keep prebuilt libraries in a directory other than jniLibs. (Important: Please don’t forget to copy libz.so from ndk package. Libtiff has libz dependency.) So, we add them to the src/main/libs/ABI directory of our module. Deployment should look like follows:
-
 ![alt text](https://github.com/ekutt/AndroidImageConverter/blob/assets/assets/dependencies.png)
+
+##### More Information
+For more information, you can check the blog here: https://medium.com/@emrekutt/a-tiny-image-converter-application-for-android-cc0972e56dde#fa1a
 
