@@ -1,12 +1,10 @@
 Image Converter Application for Android
 ==============================================
-
-|Linux|
-|:----------------:|
-| ![.github/workflows/build.yml](https://github.com/ekutt/AndroidImageConverter/workflows/.github/workflows/build.yml/badge.svg?branch=master) | 
-
 Android JPEG to TIFF converter native application project.
 The aim of this project is to provide an example Android application code that uses native C/C++ libraries.
+
+Current project status
+| ![.github/workflows/build.yml](https://github.com/ekutt/AndroidImageConverter/workflows/.github/workflows/build.yml/badge.svg?branch=master) | 
 
 ## Building 
 ### Requirements
