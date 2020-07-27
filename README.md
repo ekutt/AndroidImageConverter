@@ -38,9 +38,3 @@ The project is in Gradle project format. There are numerous ways you can build t
 - Alternatively, you can open the terminal under project root directory and run the following command:
 
 	./gradlew build 
-
-#### Building The Project
-The project is in Gradle project format. There are numerous ways you can build the project: 
-- Open the project in Android Studio and build.
-- Alternatively, you can open the terminal under project root directory and run the following command:
-	./gradlew build 
