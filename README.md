@@ -36,7 +36,7 @@ command:
 
 ![alt text](https://github.com/ekutt/AndroidImageConverter/blob/assets/assets/dependencies.png)
 
-If you wonder how to build and deploy them in case you wanted to create a project from scratch, you can continue reading the next section.
+If you wonder how to build and deploy them in case you wanted to create a project from scratch, you can continue reading.
 	
 
 #### Building The Dependencies
