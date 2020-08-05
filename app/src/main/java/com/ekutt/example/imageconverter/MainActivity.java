@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button convertToPngButton = (Button) findViewById(R.id.convertToPngButton);
-        convertToPngButton.setOnClickListener(new View.OnClickListener() {
+        Button convertToTiffButton = (Button) findViewById(R.id.convertToTiffButton);
+        convertToTiffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 convertImage();
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                     try
                     {
-                        ImageConverter.convertJPEGtoPNG(filepath, dir.getCanonicalPath()+"/"+rawFilename+".tiff");
+                        ImageConverter.convertJPEGtoTIFF(filepath, dir.getCanonicalPath()+"/"+rawFilename+".tiff");
 
                         new AlertDialog.Builder(this)
                             .setTitle("Success!")

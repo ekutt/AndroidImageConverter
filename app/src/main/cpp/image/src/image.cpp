@@ -10,7 +10,7 @@ namespace image
       return std::equal(suffix.rbegin(), suffix.rend(), str.rbegin());
   }
 
-  void convertJpgToPng(const std::string& filename, const std::string& foldername)
+  void convertJpgToTiff(const std::string& filename, const std::string& foldername)
   {
     if(endsWith(filename, "jpeg") || endsWith(filename, "jpg"))
     {
