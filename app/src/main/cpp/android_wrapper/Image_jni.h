@@ -9,10 +9,10 @@ extern "C" {
 #endif
 /*
  * Class:     com_ekutt_example_imageconverter_ImageConverter
- * Method:    convertJPEGtoPNG_Native
+ * Method:    convertJPEGtoTIFF_Native
  * Signature: (Ljava/lang/String;Ljava/lang/String;)V
  */
-JNIEXPORT void JNICALL Java_com_ekutt_example_imageconverter_ImageConverter_convertJPEGtoPNG_1Native
+JNIEXPORT void JNICALL Java_com_ekutt_example_imageconverter_ImageConverter_convertJPEGtoTIFF_1Native
 (JNIEnv *, jclass, jstring, jstring);
 
 #ifdef __cplusplus

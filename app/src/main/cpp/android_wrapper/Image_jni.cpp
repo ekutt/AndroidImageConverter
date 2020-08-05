@@ -36,10 +36,10 @@ void rethrow_as_java_exception(JNIEnv* env)
 }
 /*
  * Class:     com_ekutt_example_imageconverter_ImageConverter
- * Method:    convertJPEGtoPNG_Native
+ * Method:    convertJPEGtoTIFF_Native
  * Signature: (Ljava/lang/String;Ljava/lang/String;)V
  */
-JNIEXPORT void JNICALL Java_com_ekutt_example_imageconverter_ImageConverter_convertJPEGtoPNG_1Native
+JNIEXPORT void JNICALL Java_com_ekutt_example_imageconverter_ImageConverter_convertJPEGtoTIFF_1Native
         (JNIEnv* env, jclass, jstring filename, jstring saveFoldername)
 {
   try
@@ -54,7 +54,7 @@ JNIEXPORT void JNICALL Java_com_ekutt_example_imageconverter_ImageConverter_conv
     std::string filenameStr = std::string(convertedStr, length);
     std::string foldernameStr = std::string(convertedFolderStr, lengthFolder);
 
-    image::convertJpgToPng(filenameStr, foldernameStr);
+    image::convertJpgToTiff(filenameStr, foldernameStr);
 
     env->ReleaseStringUTFChars(filename, convertedStr);
   }

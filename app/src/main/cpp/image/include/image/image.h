@@ -6,7 +6,7 @@
 
 namespace image
 {
-    __attribute__((visibility("default"))) void convertJpgToPng(const std::string& filename, const std::string& foldername);
+    __attribute__((visibility("default"))) void convertJpgToTiff(const std::string& filename, const std::string& foldername);
 };
 
 #endif

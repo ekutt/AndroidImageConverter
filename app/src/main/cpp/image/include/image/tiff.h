@@ -10,4 +10,4 @@ namespace tiffops
   void encode(const ImageData& imageData, const std::string& outputFilename);
 };
 
-#endif //IMAGE_CONVERTER_PNG_H
+#endif //IMAGE_CONVERTER_TIFF_H
